@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    
 
     <title>오늘 뭐먹지?</title>
 
@@ -50,7 +51,7 @@
   			<c:otherwise>
      	   	<div>
        		<a class="btn btn-primary" onclick="location='Login'" style="color:white">로그인</a>
-        	<a class="btn btn-primary" onclick="location='C:/Users/PC/Desktop/소개실4/sign-up page.html'" style="color:white">회원가입</a>
+        	<a class="btn btn-primary" onclick="location='MemberAdd'" style="color:white">회원가입</a>
         	</div>
         	</c:otherwise>
         </c:choose>

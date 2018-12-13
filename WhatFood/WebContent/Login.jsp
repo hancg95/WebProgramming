@@ -40,7 +40,8 @@
 </table>
 
  <div>
- <button type="button" onclick="location='C:/Users/PC/Desktop/소개실4/findpassword.html'" class="btn btn-info btn-sm">비밀번호 찾기</button>
+ <button type="button" onclick="location='MemberAdd'" class="btn btn-info btn-sm">회원가입</button>
+ <button type="button" onclick="location='PasswordLoss'" class="btn btn-info btn-sm">비밀번호 찾기</button>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  <button type="submit" class="btn btn-info btn-sm">로그인하기</button>
  <button type="button" onclick="location='FoodMain.jsp'" class="btn btn-danger btn-sm">취소</button>

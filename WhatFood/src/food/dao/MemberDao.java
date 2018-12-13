@@ -131,6 +131,27 @@ public class MemberDao {
 	    }
 	  }
 	  
+	  public int pwChange(String pw, String id) throws Exception { 
+		    Connection connection = null;
+		    PreparedStatement stmt = null;
+		    try {
+		      connection = ds.getConnection();
+		      stmt = connection.prepareStatement(
+		          "update members set pw=?"
+		              + " where id=?");
+		      stmt.setString(1, pw);
+		      stmt.setString(2, id);
+		      return stmt.executeUpdate();
+
+		    } catch (Exception e) {
+		      throw e;
+
+		    } finally {
+		      try {if (stmt != null) stmt.close();} catch(Exception e) {}
+		      try {if (connection != null) connection.close();} catch(Exception e) {}
+		    }
+		  }
+	  
 	  public Member exist(String id, String pw) throws Exception {
 	    Connection connection = null;
 	    PreparedStatement stmt = null, pwSt = null;
