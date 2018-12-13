@@ -10,6 +10,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     
     <script type="text/javascript">
+    
+    
     function CheckForm(){
 		var form = document.foodInfo;
 
@@ -21,11 +23,13 @@
                 break;
             }
         }
+        
 		   
         if(!form.fname.value){
                 alert("음식 이름을 입력하세요.");
                 return false;
         }
+        
             
         if(!form.kind.value){
                 alert("음식 종류를 선택하세요.");
@@ -189,7 +193,7 @@
 
 <div class="col-sm-4 col-sm-offset-4">
  <button type="submit" class="btn btn-info">만들기</button>
- <button type="button" onclick="location='C:/Users/PC/Desktop/소개실4/index.html'" class="btn btn-danger">취소</button>
+ <button type="button" onclick="location='FoodMain.jsp'" class="btn btn-danger">취소</button>
   </div>
 </form>
     </div>    
@@ -197,9 +201,6 @@
 </div>
 
 
- 
-
-</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

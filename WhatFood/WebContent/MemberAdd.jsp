@@ -8,34 +8,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>회원가입 페이지</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    
+
   	<script type="text/javascript">
     function CheckForm(){
 		var form = document.memberInfo;
-		   
+
         if(!form.id.value){
                 alert("아이디를 입력하세요.");
+                form.id.focus();
                 return false;
         }
-            
         if(!form.pw.value){
                 alert("비밀번호를 입력하세요.");
+                form.pw.focus();
                 return false;
         }
         
+        
         if(!form.pwck.value){
            		alert("비밀번호 확인을 입력하세요.");
+           		form.pwck.focus();
            		return false;
  	   	}
         else if(form.pwck.value != form.pw.value){
         		alert("비밀번호 확인과 비밀번호가 맞지 않습니다.");
+        		form.pwck.value = "";
+        		form.pwck.focus();
        			return false;
         }
 		
 		if(!form.age.value){
-                alert("재료 및 특징을 입력하세요.");
+                alert("나이를 입력하세요.");
+                form.age.focus();
                 return false;
         }
+		if(!form.sex.value){
+            alert("성별을 입력하세요.");
+            form.sex.focus();
+            return false;
+    }
 
     }
  </script>
@@ -58,37 +69,37 @@
       <td style="text-align: left;">회원아이디*</td>
       <td>
           <div class="form-group">
-          <input type="text" class="form-control" name='id' placeholder="example@example.com"></div></td>
+          <input type="text" class="form-control" name='id' pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" placeholder="example@example.com"></div></td>
     </tr>
     
     <tr>
       <td style="text-align: left;">비밀번호*</td>
       <td>
           <div class="form-group">
-          <input type="password" class="form-control" name='pw' placeholder="8자리 이상"></div></td>
+          <input type="password" class="form-control" name='pw' pattern=".{8,}" placeholder="8자리 이상"></div></td>
     </tr>
     
     <tr>
       <td style="text-align: left;">비밀번호 확인*</td>
       <td>
           <div class="form-group">
-          <input type="text" class="form-control" name='pwck' placeholder="8자리 이상"></div></td>
+          <input type="password" class="form-control" name='pwck' pattern=".{8,}" placeholder="8자리 이상"></div></td>
     </tr>
     
     <tr>
       <td style="text-align: left;">나이*</td>
       <td>
           <div class="form-group">
-          <input type="text" class="form-control" name='age' placeholder="age.."></div></td>
+          <input type="number" class="form-control" name='age' placeholder="age.."></div></td>
     </tr>
 
     <tr>
       <td style="text-align: left;">성별*</td>
      <td><div class="btn-group">
  		<select class="custom-select" name='sex'>
-  		<option selected>성별</option>
- 	 	<option value="남성">남성</option>
-  		<option value="여성">여성</option>
+  		<option selected value="">성별</option>
+ 	 	<option value="man">남성</option>
+  		<option value="woman">여성</option>
 		</select>
 </div>
           </td>
@@ -98,7 +109,7 @@
 
 <div class="col-sm-4 col-sm-offset-4">
  <button type="submit" class="btn btn-info">만들기</button>
- <button type="button" onclick="location='C:/Users/PC/Desktop/소개실4/index.html'" class="btn btn-danger">취소</button>
+ <button type="button" onclick="location='FoodMain.jsp'" class="btn btn-danger">취소</button>
   </div>
 
     </div>    

@@ -25,11 +25,15 @@ public class ContextLoaderListener implements ServletContextListener {
       foodDao.setDataSource(ds);
       
       MemberDao memberDao = MemberDao.getInstance();
-      memberDao.setDataSource(ds);
+      memberDao.setDataSource(ds); 
+      
       
       sc.setAttribute("foodDao", foodDao);
       sc.setAttribute("memberDao", memberDao);
 
+      sc.setAttribute("members", memberDao.selectList());
+      sc.setAttribute("foods", foodDao.selectList());
+      
     } catch(Throwable e) {
       e.printStackTrace();
     }

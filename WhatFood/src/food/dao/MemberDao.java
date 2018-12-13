@@ -164,11 +164,36 @@ public class MemberDao {
 	      throw e;
 
 	    } finally {
-	      try {if (pwTmp != null) rs.close();} catch (Exception e) {}
+	      try {if (pwTmp != null) pwTmp.close();} catch (Exception e) {}
 		  try {if (pwSt != null) pwSt.close();} catch (Exception e) {}
 	      try {if (rs != null) rs.close();} catch (Exception e) {}
 	      try {if (stmt != null) stmt.close();} catch (Exception e) {}
 	      try {if (connection != null) connection.close();} catch(Exception e) {}
 	    }
+	  }
+	  
+	  public String pwEncryption(String pw) throws Exception{
+		  Connection connection = null;
+		    PreparedStatement pwSt = null;
+		    ResultSet pwTmp = null;
+		    
+
+		    try {
+		      connection = ds.getConnection();
+		      
+		      pwSt = connection.prepareStatement("select concat('*', convert(sha1(unhex(sha1(?))) USING utf8mb4))");//여기서 입력한 password 복호화
+		      pwSt.setString(1, pw);
+		      pwTmp = pwSt.executeQuery();
+		      while(pwTmp.next()){pw = pwTmp.getString(1);}
+		      	
+		      return pw;
+		    } catch (Exception e) {
+		      throw e;
+
+		    } finally {
+		      try {if (pwTmp != null) pwTmp.close();} catch (Exception e) {}
+			  try {if (pwSt != null) pwSt.close();} catch (Exception e) {}
+		      try {if (connection != null) connection.close();} catch(Exception e) {}
+		    }
 	  }
 }
