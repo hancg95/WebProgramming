@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>х╦©Ь╟║ют ©о╥А</title>
+<meta charset="UTF-8">
+<title>М ▄Л⌡░Й╟─Л·┘ Л≥└Кё▄</title>
 </head>
 <body>
-х╦©Ьюл ╣г╫е╟и цЮгогу╢о╢ы.
-<button type="button" onclick="location='FoodMain.jsp'" >╣╧╬ф╟║╠Б</button>
+М ▄Л⌡░Л²╢ К░≤Л▀═Й╠╦ Л╤∙М∙≤М∙╘К▀┬К▀╓.
+<button type="button" onclick="location='FoodMain.jsp'" >К▐▄Л∙└Й╟─Й╦╟</button>
 </body>
 </html>

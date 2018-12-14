@@ -26,12 +26,12 @@
   </head>
 
   <body>
-
+	<form name="foodInfo" action="FoodSelect" method='post' onSubmit="return CheckForm()">
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
         <a class="navbar-brand" style="color:gray" >음식 추천!</a>
-        <a class="btn btn-primary" onclick="location='C:/Users/PC/Desktop/소개실4/index.html'" style="color:white">메인페이지로</a>
+        <a class="btn btn-primary" onclick="location='FoodMain.jsp'" style="color:white">메인페이지로</a>
       </div>
     </nav>
 
@@ -42,12 +42,13 @@
         <div class="row">
           <div class="col-xl-9 mx-auto">
             <h1 class="mb-5">오늘 뭐먹지 ? 고민하지마세요. 우리가 추천해드릴께요.</h1>
-            <a class="btn btn-primary" onclick="#" style="color:white">좋아요</a>
-       		<a class="btn btn-danger" onclick="#" style="color:white">싫어요</a>
+            <button type="submit" id="valueId" name="select" value="Like" onClick="checkBtn(this.form.valueId.value)" class="btn btn-primary">좋아요</button>
+            <button type="submit" id="valueId" name="select" value="Hate" onClick="checkBtn(this.form.valueId.value)" class="btn btn-danger">싫어요</button>
           </div>
         </div>
          
       </div>
     </header>
+    </form>
   </body>
 </html>

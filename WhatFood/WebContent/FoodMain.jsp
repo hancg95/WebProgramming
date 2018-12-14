@@ -46,6 +46,7 @@
 		<c:choose>
 			<c:when test="${not empty member}">
     		"${member.id}"님 반갑습니다.
+    		<a class="btn btn-primary" onclick="location='MemberModify'" style="color:white">회원수정</a>
     		<a class="btn btn-primary" onclick="location='Logout'" style="color:white">로그아웃</a>
   			</c:when>
   			<c:otherwise>

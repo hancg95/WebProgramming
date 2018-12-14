@@ -167,7 +167,7 @@ public class MemberDao {
 	      while(pwTmp.next()){pw = pwTmp.getString(1);}
 	      
 	      stmt = connection.prepareStatement(
-	          "select id,age,sex,selects from members"
+	          "select id,pw,age,sex,selects from members"
 	              + " where id=? and pw=?");
 	      stmt.setString(1, id);
 	      stmt.setString(2, pw);
@@ -175,6 +175,7 @@ public class MemberDao {
 	      if (rs.next()) {
 	        return new Member()
 	          .setId(rs.getString("id"))
+	          .setPw(rs.getString("pw"))
 	          .setAge(rs.getInt("age"))
 	          .setSex(rs.getString("sex"))
 	          .setSelects(rs.getString("selects"));
