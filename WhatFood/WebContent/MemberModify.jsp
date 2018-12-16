@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -54,6 +55,11 @@
   
   </head>
   <body>
+<c:if test="${empty member}">
+<%
+response.sendRedirect("Login");
+%>
+</c:if>
 
 <div class="page-header" style="text-align: center;">
 <h1 style="margin-left:50px;"><img src="dog.png" width="40px" height="40px" style="margin-right: 15px;">Modify page</h1>  

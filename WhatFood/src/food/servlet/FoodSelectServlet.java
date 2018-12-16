@@ -47,10 +47,12 @@ public class FoodSelectServlet extends HttpServlet {
 			if(count<1) //처음 질문이라면
 			{
 				session.setAttribute("selects", foodDao.selectList()); //질문용 음식 목록 초기화
+				session.setAttribute("pastAnswer", new ArrayList<String>());
 			}
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/FoodSelect.jsp");
 			rd.forward(request, response);
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 		    request.setAttribute("error", e);
@@ -67,6 +69,7 @@ public class FoodSelectServlet extends HttpServlet {
 			  HttpSession session = request.getSession();
 		      boolean answer = Boolean.parseBoolean(request.getParameter("answer")); //대답
 		      String question = (String)session.getAttribute("question"); //질문
+		      ArrayList<String> pastAnswer = (ArrayList<String>)session.getAttribute("pastAnswer");
 		      int count = (int)session.getAttribute("count");
 		      
 		      ArrayList<Food> selects = (ArrayList<Food>)session.getAttribute("selects"); //질문에 사용할 음식목록
@@ -76,6 +79,8 @@ public class FoodSelectServlet extends HttpServlet {
 		      
 		      MaterialSelecter ms = new MaterialSelecter();
 		      
+		      if(answer) pastAnswer.add(question); //질문이었던것 저장
+		      
 		      selects = ms.select(selects,question,answer);
 		      
 		      if(selects.size()==1)
@@ -84,11 +89,7 @@ public class FoodSelectServlet extends HttpServlet {
 		    	  
 		    	  ServletContext sc = this.getServletContext();
 		    	  MemberDao memberDao = (MemberDao)sc.getAttribute("memberDao");
-
-		    	  /*request.setCharacterEncoding("UTF-8");
-		    	  response.setContentType("text/html;charset=UTF-8");*/
 			      
-		    	  
 		    	  Member member = (Member)session.getAttribute("member");
 		    	  
 		    	  member.setSelects(member.getSelects()+result+","); //결과값 넣기
@@ -103,6 +104,7 @@ public class FoodSelectServlet extends HttpServlet {
 		    	  
 		    	  request.setAttribute("result", result); //결과 넘기기
 		    	  
+		    	  
 		    	  RequestDispatcher rd = request.getRequestDispatcher("FoodResult.jsp");
 			      rd.forward(request, response);
 		      }
@@ -116,15 +118,14 @@ public class FoodSelectServlet extends HttpServlet {
 		      }
 		      else 
 		      {
-		    	  question = ms.question(selects); // 질문 골라오기
+		    	  question = ms.question(selects,pastAnswer); // 질문 골라오기
 		    	  count = count+1;
 		    	  
 		    	  
 			      session.setAttribute("selects", selects); //질문용 음식 목록
 			      session.setAttribute("question", question); //질문
 			      session.setAttribute("count", count);
-			      /*RequestDispatcher rd = request.getRequestDispatcher("/FoodSelect.jsp");
-			      rd.forward(request, response);*/
+			      session.setAttribute("pastAnswer", pastAnswer);
 			      
 			      response.sendRedirect("FoodSelect"); // 반복  
 		      }
