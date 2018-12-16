@@ -195,6 +195,37 @@ public class MemberDao {
 	    }
 	  }
 	  
+	  public boolean exist(String id) throws Exception {
+		    Connection connection = null;
+		    PreparedStatement stmt = null, pwSt = null;
+		    ResultSet rs = null, pwTmp = null;
+		    
+
+		    try {
+		      connection = ds.getConnection();
+		      
+		      stmt = connection.prepareStatement(
+		          "select id,pw,age,sex,selects from members"
+		              + " where id=?");
+		      stmt.setString(1, id);
+		      rs = stmt.executeQuery();
+		      if (rs.next()) {
+		        return true;
+		      } else {
+		        return false;
+		      }
+		    } catch (Exception e) {
+		      throw e;
+
+		    } finally {
+		      try {if (pwTmp != null) pwTmp.close();} catch (Exception e) {}
+			  try {if (pwSt != null) pwSt.close();} catch (Exception e) {}
+		      try {if (rs != null) rs.close();} catch (Exception e) {}
+		      try {if (stmt != null) stmt.close();} catch (Exception e) {}
+		      try {if (connection != null) connection.close();} catch(Exception e) {}
+		    }
+		  }
+	  
 	  public String pwEncryption(String pw) throws Exception{
 		  Connection connection = null;
 		    PreparedStatement pwSt = null;

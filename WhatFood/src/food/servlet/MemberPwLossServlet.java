@@ -44,21 +44,31 @@ public class MemberPwLossServlet extends HttpServlet {
 			  ServletContext sc = this.getServletContext();
 		      MemberDao memberDao = (MemberDao)sc.getAttribute("memberDao");
 		      MailSender ms = new MailSender();
+		      String lossId = request.getParameter("lossId");
 		      
-		      String tmpw = ms.getRandomString(8); //임시 비밀번호 생성
-		      
-		      request.setCharacterEncoding("UTF-8");
-		      response.setContentType("text/html;charset=UTF-8");
-		      
-		      
-		      
-		      String pwTmp = memberDao.pwEncryption(tmpw); // 암호화
-		      
-		      memberDao.pwChange(pwTmp, request.getParameter("lossId")); // 적용
+		      if(memberDao.exist(lossId))
+		      {
+		    	  String tmpw = ms.getRandomString(8); //임시 비밀번호 생성
+			      
+			      request.setCharacterEncoding("UTF-8");
+			      response.setContentType("text/html;charset=UTF-8");
+			      
+			      String pwTmp = memberDao.pwEncryption(tmpw); // 암호화
+			      
+			      memberDao.pwChange(pwTmp, lossId); // 적용
+			      
+			      
+			      
 
-		      ms.send(request.getParameter("lossId"), tmpw);
+			      ms.send(request.getParameter("lossId"), tmpw);
+			      
+			      response.sendRedirect("PwChangeSuccess.jsp");
+		      }
+		      else
+		      {
+		    	  response.sendRedirect("PwChangeError.jsp");
+		      }
 		      
-		      response.sendRedirect("PwChangeSuccess.jsp");
 		}catch(Exception e){
 		      e.printStackTrace();
 		      request.setAttribute("error", e);
