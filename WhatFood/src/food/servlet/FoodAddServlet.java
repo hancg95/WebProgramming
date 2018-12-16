@@ -55,13 +55,14 @@ public class FoodAddServlet extends HttpServlet {
 		      {
 		    	  tmp += val;
 		      }
-		      System.out.println(tmp);
 		      
 		      
 		      foodDao.insert(new Food()
 		        .setFname(request.getParameter("fname"))
 		        .setKind(request.getParameter("kind"))
 		        .setMaterial(tmp+request.getParameter("material")));
+		      
+		      sc.setAttribute("foods", foodDao.selectList());
 
 		      response.sendRedirect("FoodAddSuccess.jsp");
 

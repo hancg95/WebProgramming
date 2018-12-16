@@ -114,12 +114,13 @@ public class MemberDao {
 	    try {
 	      connection = ds.getConnection();
 	      stmt = connection.prepareStatement(
-	          "update members set pw=?,age=?,sex=?"
+	          "update members set pw=?,age=?,sex=?,selects=?"
 	              + " where id=?");
 	      stmt.setString(1, member.getPw()); // 비밀번호 넣을 때 이미 암ㅇ호화 해야하는구나
 	      stmt.setInt(2, member.getAge());
 	      stmt.setString(3, member.getSex());
-	      stmt.setString(4, member.getId());
+	      stmt.setString(4, member.getSelects());
+	      stmt.setString(5, member.getId());
 	      return stmt.executeUpdate();
 
 	    } catch (Exception e) {

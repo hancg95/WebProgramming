@@ -69,7 +69,8 @@ public class MemberModifyServlet extends HttpServlet {
 						.setId(member.getId())
 						.setPw(newPwTmp)
 						.setAge(Integer.parseInt(request.getParameter("age")))
-						.setSex(request.getParameter("sex")));
+						.setSex(request.getParameter("sex"))
+						.setSelects(member.getSelects()));
 			
 			response.sendRedirect("MemberModifySuccess.jsp");
 		}catch(Exception e){

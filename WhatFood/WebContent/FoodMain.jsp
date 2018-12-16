@@ -39,6 +39,9 @@
   </head>
 
   <body>
+<%
+session.setAttribute("count", 0);
+%>
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">

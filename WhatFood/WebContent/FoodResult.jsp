@@ -27,11 +27,14 @@
 
   <body>
 
+<%
+session.setAttribute("count", 0);
+%>
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
         <a class="navbar-brand" style="color:gray" >오늘 뭐먹지 ?</a>
-        <a class="btn btn-primary" onclick="location='C:/Users/PC/Desktop/소개실4/index.html'" style="color:white">메인페이지로</a>
+        <a class="btn btn-primary" onclick="location='FoodMain.jsp'" style="color:white">메인페이지로</a>
       </div>
     </nav>
 
@@ -41,11 +44,12 @@
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">오늘 뭐먹지 ? 고민하지마세요. 우리가 추천해드릴께요.</h1>
+            <h1 class="mb-5">음식 추천의 결과는 ${result}입니다.</h1>
+            <a class="btn btn-primary" onclick="location='FoodMain.jsp'" style="color:white">만족</a>
+	        <a class="btn btn-danger" onclick="location='FoodMain.jsp'" style="color:white">돌아가기</a>
           </div>
         </div>
-         <a class="btn btn-primary" style="color:white">만족</a>
-        <a class="btn btn-danger" style="color:white">돌아가기</a>
+         
       </div>
     </header>
   </body>

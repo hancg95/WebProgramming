@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 		      if (member != null) {
 		        HttpSession session = request.getSession();
 		        session.setAttribute("member", member);
-		        /*response.sendRedirect("../food/FoodMain");*/
+		        session.setAttribute("count", 0);
 		        RequestDispatcher rd = request.getRequestDispatcher(
 			            "FoodMain.jsp");
 			    rd.forward(request, response);

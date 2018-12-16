@@ -54,6 +54,8 @@ public class MemberAddServlet extends HttpServlet {
 				        .setPw(pwTmp)
 				        .setAge(Integer.parseInt(request.getParameter("age")))
 				        .setSex(request.getParameter("sex")));
+		      
+		      sc.setAttribute("members", memberDao.selectList());
 
 		      response.sendRedirect("MemberAddSuccess.jsp");
 		}catch(Exception e){

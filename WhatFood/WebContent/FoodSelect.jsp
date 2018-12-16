@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,9 +42,9 @@
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">오늘 뭐먹지 ? 고민하지마세요. 우리가 추천해드릴께요.</h1>
-            <button type="submit" id="valueId" name="select" value="Like" onClick="checkBtn(this.form.valueId.value)" class="btn btn-primary">좋아요</button>
-            <button type="submit" id="valueId" name="select" value="Hate" onClick="checkBtn(this.form.valueId.value)" class="btn btn-danger">싫어요</button>
+            <h1 class="mb-5">${question} 어떻습니까?</h1>
+            <button type="submit" id="valueId" name="answer" value="true" onClick="checkBtn(this.form.valueId.value)" class="btn btn-primary">좋아요</button>
+            <button type="submit" id="valueId" name="answer" value="false" onClick="checkBtn(this.form.valueId.value)" class="btn btn-danger">싫어요</button>
           </div>
         </div>
          

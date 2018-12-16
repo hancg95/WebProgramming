@@ -24,6 +24,7 @@
             form.pw.focus();
             return false;
    		}
+        
         if(!form.newPwck.value){
            		alert("비밀번호 확인을 입력하세요.");
            		form.pwck.focus();
@@ -31,8 +32,8 @@
  	   	}
         else if(form.newPwck.value != form.newPw.value){
         		alert("비밀번호 확인과 비밀번호가 맞지 않습니다.");
-        		form.pwck.value = "";
-        		form.pwck.focus();
+        		form.newPwck.value = "";
+        		form.newPwck.focus();
        			return false;
         }
 		
@@ -41,12 +42,13 @@
                 form.age.focus();
                 return false;
         }
+		
 		if(!form.sex.value){
             alert("성별을 입력하세요.");
             form.sex.focus();
             return false;
     	}
-
+	
     }
  </script>
   
@@ -54,7 +56,7 @@
   <body>
 
 <div class="page-header" style="text-align: center;">
-<h1 style="margin-left:50px;"><img src="dog.png" width="40px" height="40px" style="margin-right: 15px;">Sign-up page</h1>  
+<h1 style="margin-left:50px;"><img src="dog.png" width="40px" height="40px" style="margin-right: 15px;">Modify page</h1>  
 </div>
 <form name="changeInfo" action="MemberModify" method='post' onSubmit="return CheckForm()">
 <div class="container">
