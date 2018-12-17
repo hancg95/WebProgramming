@@ -51,6 +51,9 @@ session.setAttribute("count", 0);
         <div class="row">
           <div class="col-xl-9 mx-auto">
             <h1 class="mb-5">음식 추천의 결과는 ${result}입니다.</h1>
+            <c:if test="${result eq '없'}">
+			<a class="btn btn-warning" onclick="location='FoodAdd'" style="color:white">돌아가기</a>
+			</c:if>
             <a class="btn btn-primary" onclick="location='FoodMain.jsp'" style="color:white">돌아가기</a>
           </div>
         </div>

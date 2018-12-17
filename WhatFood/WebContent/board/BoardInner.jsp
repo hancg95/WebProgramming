@@ -10,6 +10,11 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<c:if test="${empty member}">
+<%
+response.sendRedirect("Login");
+%>
+</c:if>
 <div class="container">
   <div class="row">
     <div class="col-md-offset-3 col-md-6 col-md-offset-3">

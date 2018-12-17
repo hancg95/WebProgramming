@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -51,6 +52,11 @@
     
   </head>
   <body>
+<c:if test="${empty member}">
+<%
+response.sendRedirect("Login");
+%>
+</c:if>
 
 <div class="page-header" style="text-align: center;">
 <h1 style="margin-left:50px;"><img src="dog.png" width="40px" height="40px" style="margin-right: 15px;">음식 추가 페이지</h1>  
@@ -183,7 +189,7 @@
       <td>
           <div class="form-group">
 			<label for="exampleFormControlTextarea1"></label>
-			<textarea class="form-control" name='material' rows="5" placeholder='추가하실 재료들을 &#39;,&#39;로 구분하여 적어주세요.'></textarea>
+			<textarea class="form-control" name='material' rows="5" style="ime-mode:active" placeholder='추가하실 재료들을 &#39;,&#39;로 구분하여 적어주세요.'></textarea>
 			</div></td>
     </tr>
     

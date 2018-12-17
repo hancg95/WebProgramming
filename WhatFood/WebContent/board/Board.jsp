@@ -6,10 +6,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>board page</title>
+    <title>게시판</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
 <body>
+<c:if test="${empty member}">
+<%
+response.sendRedirect("Login");
+%>
+</c:if>
+
 <style type="text/css">
   .custab{
     border: 1px solid #ccc;
@@ -37,7 +43,7 @@
 
 <form action='Board' method='post' class="navbar-form navbar-right" role="search" style="margin-right: 55px;">
   <div class="form-group">
-  	<a class="btn btn-primary" onclick="location='Board'" style="color:white; margin-right: 30px;">게시판</a>
+  	<a class="btn btn-info" onclick="location='Board'" style="color:white; margin-right: 30px;">자유게시판</a>
     <input type="text" name="title" class="form-control" placeholder="Search">
   </div>
   <button type="submit" class="btn btn-default">검색하기</button>
