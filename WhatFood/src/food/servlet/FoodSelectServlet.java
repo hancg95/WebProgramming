@@ -40,6 +40,7 @@ public class FoodSelectServlet extends HttpServlet {
 		try {
 			ServletContext sc = this.getServletContext();
 			HttpSession session = request.getSession();
+			MaterialSelecter ms = new MaterialSelecter();
 			
 			FoodDao foodDao = (FoodDao)sc.getAttribute("foodDao");
 			int count = (int)session.getAttribute("count");
@@ -49,6 +50,12 @@ public class FoodSelectServlet extends HttpServlet {
 				session.setAttribute("selects", foodDao.selectList()); //질문용 음식 목록 초기화
 				session.setAttribute("pastAnswer", new ArrayList<String>());
 			}
+			
+			ArrayList<Food> selects = (ArrayList<Food>)session.getAttribute("selects"); //질문에 사용할 음식목록
+			ArrayList<String> pastAnswer = (ArrayList<String>)session.getAttribute("pastAnswer");
+			String question = ms.question(selects,pastAnswer); // 질문 골라오기
+			
+			session.setAttribute("question", question); //질문
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/FoodSelect.jsp");
 			rd.forward(request, response);
@@ -82,6 +89,7 @@ public class FoodSelectServlet extends HttpServlet {
 		      if(answer) pastAnswer.add(question); //질문이었던것 저장
 		      
 		      selects = ms.select(selects,question,answer);
+		      count = count+1;
 		      
 		      if(selects.size()==1)
 		      {
@@ -119,7 +127,7 @@ public class FoodSelectServlet extends HttpServlet {
 		      else 
 		      {
 		    	  question = ms.question(selects,pastAnswer); // 질문 골라오기
-		    	  count = count+1;
+		    	  
 		    	  
 		    	  
 			      session.setAttribute("selects", selects); //질문용 음식 목록
