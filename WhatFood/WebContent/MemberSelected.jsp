@@ -50,7 +50,16 @@ session.setAttribute("count", 0);
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5" style="color:#E2ECFF">회원님의 음식 추천 결과는</h1><h1 style="color:#E2ECFF"> ${member.selects},,입니다.</h1><h1>&nbsp;</h1>
+            <c:choose>
+			<c:when test="${member.selects eq ''}">
+			<h1 class="mb-5" style="color:#E2ECFF">음식 추천을 한번 이상 해주시기 바랍니다.</h1>
+			<h1>&nbsp;</h1>
+  			</c:when>
+  			<c:otherwise>
+  			<h1 class="mb-5" style="color:#E2ECFF">회원님이 선택했던 음식은 </h1>
+        	<h1 style="color:#E2ECFF"> ${member.selects},,입니다.</h1><h1>&nbsp;</h1>
+        	</c:otherwise>
+        </c:choose>
             <a class="btn btn-primary" onclick="location='FoodMain.jsp'" style="color:white">돌아가기</a>
           </div>
         </div>

@@ -45,12 +45,12 @@ session.setAttribute("count", 0);
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
-        <a class="navbar-brand" style="color:gray">오늘 뭐먹지 ?</a>
+        <a class="navbar-brand" style="color:gray; font-weight: bold">오늘 뭐먹지 ?</a>
 		<c:choose>
 			<c:when test="${not empty member}">
 			<a class="btn btn-secondary" onclick="location='MemberSelected.jsp'" style="color:white; ">추천목록</a>
 			<a class="btn btn-warning" onclick="location='FoodAdd'" style="color:white; margin-right: 30px;">음식추가</a>
-    		"${member.id}"님 반갑습니다. 
+    		<span style="color:black;  font-weight: bold">"${member.id}"님 반갑습니다.</span> 
     		<a class="btn btn-primary" onclick="location='MemberModify'" style="color:white; margin-left: 30px;">회원수정</a>
     		<a class="btn btn-info" onclick="location='Board'" style="color:white"> &nbsp;게시판&nbsp;</a>
     		<a class="btn btn-danger" onclick="location='Logout'" style="color:white">로그아웃</a>
@@ -127,7 +127,9 @@ session.setAttribute("count", 0);
           </div>
         </div>
         <div class="row no-gutters">
-          <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/chinesefood.jpg');"></div>
+        <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/japanesefood.png');"></div>
+          <!-- <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/chfood.png');"></div> -->
+          <!-- <div class="col-lg-6  text-white showcase-img" style="background-image: url('img/chinesefood.jpg');"></div> -->
           <div class="col-lg-6 my-auto showcase-text">
             <h2>중식</h2>
             <p class="lead mb-0">깐쇼새우, 깐풍기, 꽃빵, 탄카오루양, 난자완스, 도삭면, 동파육, 딤섬, 딴딴면, 라몐, 라조기, 랑샤, 마라탕, 마파두부, 만두, 만터우, 멘보샤, 볶음밥, 불도장, 빙탕후루, 삼부점, 우육면 등</p>

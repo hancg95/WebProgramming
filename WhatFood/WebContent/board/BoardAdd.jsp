@@ -22,7 +22,7 @@ response.sendRedirect("Login");
 <form action='BoardAdd' method='post'>
 <div class="container">
   <div class="row">
-    <div class="col-md-offset-2 col-md-8 col-md-offset-2">
+    <div>
       
 <table class="table table-striped" style="text-align: center;">
 
@@ -48,9 +48,9 @@ response.sendRedirect("Login");
   </div>
 </div>
 
-<div class="col-md-offset-8 col-md-4"> 
+<div style="text-align: center;"> 
  <button type='submit' class="btn btn-info">확인</button>
- <button type="button" onclick='location.href="Board'" class="btn btn-danger">취소</button>
+ <button type="button" onclick='location.href="Board"' class="btn btn-danger">취소</button>
   </div>
 </form>
 

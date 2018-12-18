@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${board.title}</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>${board.title}</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <c:if test="${empty member}">
@@ -15,9 +15,12 @@
 response.sendRedirect("Login");
 %>
 </c:if>
+<div class="page-header">
+<h1 style="margin-left:50px;"><center><img src="dog.png" width="40px", height="40px" style="margin-right: 15px;">${board.title}</center></h1>  
+</div>
 <div class="container">
   <div class="row">
-    <div class="col-md-offset-3 col-md-6 col-md-offset-3">
+    <div>
       
 <table class="table table-striped" style="text-align: center;">
 
@@ -55,11 +58,17 @@ response.sendRedirect("Login");
   </tbody>
   <tbody>
   <!-- 해당 게시글 작성자 인지에 따라 수정버트을 나타낼지 안나타낼지 정하는 자바 코드. 자바 코드는 나도 넣기 싫었음. -->
-	    <tr><td>
-	    	    <div class="col-md-offset-8 col-md-4">
+	    
+  </tbody>
+</table>
+    </div>    
+  </div>
+</div>
+<div style="margin-top: 200px;">
+<tr><td>
+	    	    <div style="text-align: center;">
 	    <%
 	    	Boolean check = (Boolean) request.getAttribute("check");
-	    	System.out.println(check);
 	    	if(check){
 	    %>
 
@@ -70,11 +79,7 @@ response.sendRedirect("Login");
 		      <input type="button" onclick="location.href='Board'" class="btn btn-info" value="목록">
 		      </div>
 	    </td></tr>
-  </tbody>
-</table>
-    </div>    
-  </div>
-</div>
+	    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>

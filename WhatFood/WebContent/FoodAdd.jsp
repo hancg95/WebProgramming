@@ -64,9 +64,9 @@ response.sendRedirect("Login");
 
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-4">
+    <div >
 <form name="foodInfo" action="FoodAdd" method='post' onSubmit="return CheckForm()">     
-<table class="table table-striped" style="width: 1000px; text-align: center;">
+<table class="table table-striped" style=" text-align: center;">
 
   <tbody>
     <tr>
@@ -93,94 +93,112 @@ response.sendRedirect("Login");
       <td style="text-align: left;">특징*</td>
       <td>
           <div class="form-check">
-			<input class="form-check-input" type="checkbox" id="매운" name="ATRBT[]" value="매운,">
+			<input class="form-check-input" type="checkbox" id="매운 맛" name="ATRBT[]" value="매운 맛,">
 			<label class="form-check-label" >
 			매운 맛
-			</label>
-			<input class="form-check-input" type="checkbox" id="단" name="ATRBT[]" value="단,">
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input class="form-check-input" type="checkbox" id="단 맛" name="ATRBT[]" value="단 맛,">
 			<label class="form-check-label" >
 			단 맛
-			</label>
-			<input class="form-check-input" type="checkbox" id="짠" name="ATRBT[]" value="짠,">
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input class="form-check-input" type="checkbox" id="짠 맛" name="ATRBT[]" value="짠 맛,">
 			<label class="form-check-label" >
 			짠 맛
-			</label>
-			<input class="form-check-input" type="checkbox" id="신" name="ATRBT[]" value="신,">
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input class="form-check-input" type="checkbox" id="신 맛" name="ATRBT[]" value="신 맛,">
 			<label class="form-check-label" >
 			신 맛
-			</label>
-			<input class="form-check-input" type="checkbox" id="고소한" name="ATRBT[]" value="고소한,">
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input class="form-check-input" type="checkbox" id="고소한 맛" name="ATRBT[]" value="고소한 맛,">
 			<label class="form-check-label" >
 			고소한 맛
-			</label>
-			<input class="form-check-input" type="checkbox" id="바삭한" name="ATRBT[]" value="바삭한,">
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			
+			<br>
+			
+			<input class="form-check-input" type="checkbox" id="바삭한 식감" name="ATRBT[]" value="바삭한 식감,">
 			<label class="form-check-label" >
 			바삭한 식감
-			</label>
-			<input class="form-check-input" type="checkbox" id="걸쭉한" name="ATRBT[]" value="걸쭉한,">
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input class="form-check-input" type="checkbox" id="걸쭉한 식감" name="ATRBT[]" value="걸쭉한 식감,">
 			<label class="form-check-label" >
 			걸쭉한 식감
-			</label>
-			<input class="form-check-input" type="checkbox" id="뜨거운" name="ATRBT[]" value="뜨거운,">
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			
+			<br>
+			
+			<input class="form-check-input" type="checkbox" id="뜨거운 요리" name="ATRBT[]" value="뜨거운 요리,">
 			<label class="form-check-label" >
 			뜨거운 요리
-			</label>
-			<input class="form-check-input" type="checkbox" id="차가운" name="ATRBT[]" value="차가운,">
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input class="form-check-input" type="checkbox" id="차가운 요리" name="ATRBT[]" value="차가운 요리,">
 			<label class="form-check-label" >
 			차가운 요리
-			</label>
-			<input class="form-check-input" type="checkbox" id="느끼한" name="ATRBT[]" value="느끼한,">
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			
+			<br>
+			
+			<input class="form-check-input" type="checkbox" id="느끼한 요리" name="ATRBT[]" value="느끼한 요리,">
 			<label class="form-check-label" >
 			느끼한 요리
-			</label>
-			<input class="form-check-input" type="checkbox" id="튀긴" name="ATRBT[]" value="튀긴,">
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input class="form-check-input" type="checkbox" id="튀긴 요리" name="ATRBT[]" value="튀긴 요리,">
 			<label class="form-check-label" >
 			튀긴 요리
-			</label>
-			<input class="form-check-input" type="checkbox" id="구운" name="ATRBT[]" value="구운,">
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input class="form-check-input" type="checkbox" id="구운 요리" name="ATRBT[]" value="구운 요리,">
 			<label class="form-check-label" >
 			구운 요리
-			</label>
-			<input class="form-check-input" type="checkbox" id="삶은" name="ATRBT[]" value="삶은,">
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			
+			<br>
+			
+			<input class="form-check-input" type="checkbox" id="삶은 요리" name="ATRBT[]" value="삶은 요리,">
 			<label class="form-check-label" >
 			삶은 요리
-			</label>
-			<input class="form-check-input" type="checkbox" id="볶은" name="ATRBT[]" value="볶은,">
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input class="form-check-input" type="checkbox" id="볶은 요리" name="ATRBT[]" value="볶은 요리,">
 			<label class="form-check-label" >
 			볶은 요리
-			</label>
-			<input class="form-check-input" type="checkbox" id="국물" name="ATRBT[]" value="국물,">
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input class="form-check-input" type="checkbox" id="국물 요리" name="ATRBT[]" value="국물 요리,">
 			<label class="form-check-label" >
-			국물
-			</label>
-			<input class="form-check-input" type="checkbox" id="날" name="ATRBT[]" value="날,">
+			국물 요리
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			
+			<br>
+			
+			<input class="form-check-input" type="checkbox" id="날 음식" name="ATRBT[]" value="날 음식,">
 			<label class="form-check-label" >
 			날 음식
-			</label>
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
 			<input class="form-check-input" type="checkbox" id="고기" name="ATRBT[]" value="고기,">
 			<label class="form-check-label" >
 			고기
-			</label>
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
 			<input class="form-check-input" type="checkbox" id="야채" name="ATRBT[]" value="야채,">
 			<label class="form-check-label" >
 			야채
-			</label>
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			
+			<br>
+			
 			<input class="form-check-input" type="checkbox" id="밥" name="ATRBT[]" value="밥,">
 			<label class="form-check-label" >
 			밥
-			</label>
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
 			<input class="form-check-input" type="checkbox" id="치즈" name="ATRBT[]" value="치즈,">
 			<label class="form-check-label" >
 			치즈
-			</label>
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
 			<input class="form-check-input" type="checkbox" id="빵" name="ATRBT[]" value="빵,">
 			<label class="form-check-label" >
 			빵
-			</label>
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
 			<input class="form-check-input" type="checkbox" id="면" name="ATRBT[]" value="면,">
 			<label class="form-check-label" >
 			면
-			</label>
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;
 			</div></td>
     </tr>
     
@@ -197,7 +215,7 @@ response.sendRedirect("Login");
   
 </table>
 
-<div class="col-sm-4 col-sm-offset-4">
+<div style="text-align: center;">
  <button type="submit" class="btn btn-info">만들기</button>
  <button type="button" onclick="location='FoodMain.jsp'" class="btn btn-danger">취소</button>
   </div>

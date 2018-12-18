@@ -36,7 +36,7 @@ response.sendRedirect("Login");
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
-        <a class="navbar-brand" style="color:gray" >음식 추천!</a>
+        <a class="navbar-brand" style="color:gray; font-weight: bold" >음식 추천!</a>
         <a class="btn btn-primary" onclick="location='FoodMain.jsp'" style="color:white">메인페이지로</a>
       </div>
     </nav>

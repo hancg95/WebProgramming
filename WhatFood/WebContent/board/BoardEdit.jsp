@@ -2,14 +2,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>게시글 수정</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-  </head>
-  <body>
+</head>
+<body>
 <c:if test="${empty member}">
 <%
 response.sendRedirect("Login");
@@ -17,13 +17,13 @@ response.sendRedirect("Login");
 </c:if>
 
 <div class="page-header" style="text-align: center;">
-<h1 style="margin-left:50px;"><img src="dog.png" width="40px", height="40px" style="margin-right: 15px;">게시글 쓰기</h1>  
+<h1 style="margin-left:50px;"><img src="dog.png" width="40px", height="40px" style="margin-right: 15px;">게시글 수정</h1>  
 </div>
 <form action='BoardEdit' method='post'>
 		<input type="hidden" name="bno" value="${board.bno}">
 <div class="container">
   <div class="row">
-    <div class="col-md-offset-2 col-md-8 col-md-offset-2">
+    <div>
       
 <table class="table table-striped" style="text-align: center;">
   <tbody>
@@ -50,7 +50,7 @@ response.sendRedirect("Login");
   </div>
 </div>
 
-<div class="col-md-offset-7 col-md-5"> 
+<div style="text-align: center;"> 
  <button type="submit" class="btn btn-info">수정완료</button>
  <button type="button" onclick="location.href='BoardInner?bno=${board.bno}&views=${board.views}'" class="btn btn-info">취소</button>
  <button type="button" onclick="location.href='BoardDelete?bno=${board.bno}'" class="btn btn-danger">삭제</button>
