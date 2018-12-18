@@ -127,9 +127,7 @@ session.setAttribute("count", 0);
           </div>
         </div>
         <div class="row no-gutters">
-        <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/japanesefood.png');"></div>
-          <!-- <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/chfood.png');"></div> -->
-          <!-- <div class="col-lg-6  text-white showcase-img" style="background-image: url('img/chinesefood.jpg');"></div> -->
+          <div class="col-lg-6  text-white showcase-img" style="background-image: url('img/chfood.jpg');"></div>
           <div class="col-lg-6 my-auto showcase-text">
             <h2>중식</h2>
             <p class="lead mb-0">깐쇼새우, 깐풍기, 꽃빵, 탄카오루양, 난자완스, 도삭면, 동파육, 딤섬, 딴딴면, 라몐, 라조기, 랑샤, 마라탕, 마파두부, 만두, 만터우, 멘보샤, 볶음밥, 불도장, 빙탕후루, 삼부점, 우육면 등</p>
