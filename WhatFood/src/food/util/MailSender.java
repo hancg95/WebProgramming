@@ -14,7 +14,7 @@ import javax.mail.internet.MimeMessage;
 public class MailSender {
  
     public void send(String id, String tmpw) {
-         
+        //출처 : http://fruitdev.tistory.com/15
         Properties p = System.getProperties();
         p.put("mail.smtp.starttls.enable", "true");     // gmail은 무조건 true 고정
         p.put("mail.smtp.host", "smtp.gmail.com");      // smtp 서버 주소
