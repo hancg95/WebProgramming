@@ -48,9 +48,10 @@ session.setAttribute("count", 0);
         <a class="navbar-brand" style="color:gray">오늘 뭐먹지 ?</a>
 		<c:choose>
 			<c:when test="${not empty member}">
+			<a class="btn btn-secondary" onclick="location='MemberSelected.jsp'" style="color:white; ">추천목록</a>
 			<a class="btn btn-warning" onclick="location='FoodAdd'" style="color:white; margin-right: 30px;">음식추가</a>
-    		"${member.id}"님 반갑습니다.
-    		<a class="btn btn-primary" onclick="location='MemberModify'" style="color:white">회원수정</a>
+    		"${member.id}"님 반갑습니다. 
+    		<a class="btn btn-primary" onclick="location='MemberModify'" style="color:white; margin-left: 30px;">회원수정</a>
     		<a class="btn btn-info" onclick="location='Board'" style="color:white"> &nbsp;게시판&nbsp;</a>
     		<a class="btn btn-danger" onclick="location='Logout'" style="color:white">로그아웃</a>
   			</c:when>
